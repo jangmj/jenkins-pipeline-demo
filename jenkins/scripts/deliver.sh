@@ -13,5 +13,5 @@ VERSION=`echo "0.0.35"`
 set +x
 
 echo "scp -P 22000 target/${NAME}-${VERSION}.war"
-bash -c 'echo "scp -P 22000 target/${NAME}-${VERSION}.war webdev@1.242.216.122:~/projects/lotte/"'
-bash -c 'echo "scp -P 22000 target/${NAME}-${VERSION}.war webdev@1.242.216.122:~/projects/lotte/" > ../../scp.sh'
+bash -c 'echo "scp -P 22000 `target/${NAME}-${VERSION}.war` webdev@1.242.216.122:~/projects/lotte/"'
+bash -c 'echo "scp -P 22000 `target/${NAME}-${VERSION}.war` webdev@1.242.216.122:~/projects/lotte/" > ../../scp.sh'
