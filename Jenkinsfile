@@ -14,7 +14,7 @@ pipeline {
             steps {
             	sh 'chmod +x ./jenkins/scripts/deliver.sh'
                 sh 'sh ./jenkins/scripts/deliver.sh'
-                sh 'echo ${NAME}'
+                sh 'echo `${NAME}`'
                 sh 'echo "scp Jenkinsfile"'
                 sh '''
                     ls -lah
