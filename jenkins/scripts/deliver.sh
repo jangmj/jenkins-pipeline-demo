@@ -16,4 +16,6 @@ echo "scp -P 22000 target/${NAME}-${VERSION}.war"
 set -x
 CMD=`scp -P 22000 Jenkinsfile webdev@1.242.216.122:~/projects/lotte/${NAME}-${VERSION}.war`
 set +x
+bash -c 'whoami'
+bash -c 'which scp'
 bash -c '${CMD}'
