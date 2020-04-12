@@ -6,8 +6,6 @@ pipeline {
                 sh "printenv"
             }
         }
-    }
-    stages {
         stage('Build') {
             steps {
                 sh 'echo "Hello World"'
