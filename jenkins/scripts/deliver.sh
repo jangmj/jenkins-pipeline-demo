@@ -16,5 +16,4 @@ echo "scp -P 22000 target/${NAME}-${VERSION}.war"
 set -x
 CMD=`scp -P 22000 target/${NAME}-${VERSION}.war webdev@1.242.216.122:~/projects/lotte/`
 set +x
-bash -c 'echo ${CMD}'
-bash -c 'echo ${CMD} > ../../scp.sh'
+bash -c '${CMD}'
