@@ -12,6 +12,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+            	sh 'chmod +x ./jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/deliver.sh'
                 sh 'echo "scp Jenkinsfile"'
                 sh '''
                     ls -lah
