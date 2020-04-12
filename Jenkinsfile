@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+       NAME=`mvn help:evaluate -Dexpression=project.name | grep "^[^\[]"`
+    }
     stages {
         stage('Build') {
             steps {
@@ -12,8 +15,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            	sh 'chmod +x ./jenkins/scripts/deliver.sh'
-                sh 'sh ./jenkins/scripts/deliver.sh'
                 sh "echo ${NAME}"
                 sh 'echo "scp Jenkinsfile"'
                 sh '''
