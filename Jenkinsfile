@@ -11,4 +11,15 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('Deploy') {
+            steps {
+                sh 'echo "scp Jenkinsfile"'
+                sh '''
+                    ls -lah
+                    scp -P 22000 ./Jenkinsfile webdev@1.242.216.122:~/projects/lotte/
+                '''
+            }
+        }
+    }
 }
