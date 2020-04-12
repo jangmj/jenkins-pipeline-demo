@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        stage("Env Variables") {
+            steps {
+                sh "printenv"
+            }
+        }
+    }
+    stages {
         stage('Build') {
             steps {
                 sh 'echo "Hello World"'
@@ -12,7 +19,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "export NAME=`mvn help:evaluate -Dexpression=project.name | grep "^[^\[]"`"
                 sh "echo ${NAME}"
                 sh 'echo "scp Jenkinsfile"'
                 sh '''
