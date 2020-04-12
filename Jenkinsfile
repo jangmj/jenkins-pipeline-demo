@@ -10,8 +10,6 @@ pipeline {
                 '''
             }
         }
-    }
-    stages {
         stage('Deploy') {
             steps {
                 sh 'echo "scp Jenkinsfile"'
